@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isabelle Meunier — CV</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#f5f5f7;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:2rem 1rem}
+:root{--rv-navy:#191c35;--rv-purple:#6b21e8;--rv-blue:#2563eb;--rv-green:#059669;--rv-light:#f0f2ff;--rv-muted:#6b7280;--rv-border:#e2e4f0;--text-primary:#111;--text-secondary:#4b5563;--bg-primary:#fff;--bg-secondary:#f9fafb}
+.cv{max-width:740px;margin:0 auto;padding:0 0 3rem}
+.header-card{background:var(--rv-navy);border-radius:16px;padding:24px 28px;margin-bottom:16px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.name{font-size:24px;font-weight:500;color:#fff;letter-spacing:-0.3px;margin-bottom:4px}
+.tagline{font-size:13px;color:#a5b4fc;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.chip{font-size:10px;font-weight:500;padding:3px 9px;border-radius:20px;border:1px solid rgba(165,180,252,0.3);color:#c7d2fe;letter-spacing:0.4px}
+.contact-row{display:flex;gap:16px;flex-wrap:wrap}
+.contact-item{display:flex;align-items:center;gap:5px;font-size:11px;color:#9ca3af}
+.avatar{width:52px;height:52px;border-radius:50%;background:#3b4fd8;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:500;color:#fff;flex-shrink:0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.stat-card{background:var(--bg-primary);border:0.5px solid var(--rv-border);border-radius:12px;padding:14px 16px;border-top:2px solid var(--rv-purple)}
+.stat-n{font-size:20px;font-weight:500;color:var(--text-primary)}
+.stat-l{font-size:10px;color:var(--rv-muted);margin-top:3px;line-height:1.4}
+.section-label{font-size:9px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--rv-purple);margin-bottom:12px;margin-top:24px;display:flex;align-items:center;gap:8px}
+.section-label::after{content:'';flex:1;height:0.5px;background:var(--rv-border)}
+.exp-card{background:var(--bg-primary);border:0.5px solid var(--rv-border);border-radius:12px;padding:16px 18px;margin-bottom:10px;position:relative;overflow:hidden}
+.exp-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--rv-purple)}
+.exp-card.bnp::before{background:var(--rv-blue)}
+.exp-card.venture::before{background:var(--rv-green)}
+.exp-card.consultant::before{background:#f59e0b}
+.job-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:2px}
+.job-title{font-size:13px;font-weight:500;color:var(--text-primary);line-height:1.4}
+.date-badge{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--rv-light);color:var(--rv-purple);font-weight:500;white-space:nowrap;flex-shrink:0}
+.job-co{font-size:11px;color:var(--rv-muted);margin-bottom:8px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.co-badge{font-size:10px;padding:2px 7px;border-radius:4px;font-weight:500}
+.co-bnp{background:#dbeafe;color:#1d4ed8}
+.co-tw{background:#ede9fe;color:#6d28d9}
+.co-cons{background:#fef3c7;color:#92400e}
+.co-venture{background:#d1fae5;color:#065f46}
+.co-exco{background:#fef3c7;color:#92400e}
+.award{font-size:10px;padding:2px 7px;border-radius:4px;font-weight:500;background:#fef9c3;color:#854d0e;display:inline-flex;align-items:center;gap:4px}
+.points{list-style:none;padding:0}
+.points li{font-size:12px;color:var(--text-secondary);line-height:1.6;padding-left:14px;position:relative;margin-bottom:4px}
+.points li::before{content:'›';position:absolute;left:0;color:var(--rv-purple);font-size:14px;line-height:1.4}
+.points li b{color:var(--text-primary);font-weight:500}
+.points li a{color:var(--rv-blue);text-decoration:none;font-size:11px}
+.tags-row{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.tag{font-size:10px;padding:2px 7px;border-radius:4px;background:var(--bg-secondary);color:var(--text-secondary);border:0.5px solid var(--rv-border)}
+.bottom-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;margin-top:4px}
+.bottom-card{background:var(--bg-primary);border:0.5px solid var(--rv-border);border-radius:12px;padding:16px 18px}
+.bottom-title{font-size:9px;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;color:var(--rv-muted);margin-bottom:10px}
+.edu-item{font-size:12px;color:var(--text-secondary);margin-bottom:8px;line-height:1.5}
+.edu-item b{color:var(--text-primary);font-weight:500;display:block}
+.skill-tags{display:flex;flex-wrap:wrap;gap:5px}
+.skill-tag{font-size:10px;padding:3px 9px;border-radius:20px;border:0.5px solid var(--rv-border);color:var(--text-secondary)}
+.lang-row{font-size:12px;color:var(--text-secondary);margin-bottom:6px}
+.lang-row b{color:var(--text-primary);font-weight:500}
+.print-btn{margin-top:20px;font-size:12px;padding:8px 18px;border-radius:8px;cursor:pointer;background:var(--rv-navy);color:#fff;border:none;display:inline-flex;align-items:center;gap:6px}
+.print-btn:hover{opacity:0.9}
+@media print{body{background:#fff;padding:0}.print-btn{display:none}}
+</style>
+</head>
+<body>
+<div class="cv">
+
+<div class="header-card">
+  <div>
+    <div class="name">Isabelle Meunier</div>
+    <div class="tagline">Head of lending strategy &nbsp;·&nbsp; Financial services executive &nbsp;·&nbsp; Entrepreneur</div>
+    <div class="chips">
+      <span class="chip">Mortgage lending</span>
+      <span class="chip">Consumer finance</span>
+      <span class="chip">Team management</span>
+      <span class="chip">Fintech</span>
+      <span class="chip">AI transformation</span>
+      <span class="chip">ExCo member</span>
+      <span class="chip">Entrepreneur</span>
+    </div>
+    <div class="contact-row">
+      <span class="contact-item"><i class="ti ti-map-pin"></i> Paris, France</span>
+      <span class="contact-item"><i class="ti ti-mail"></i> isabelle.meunier86@gmail.com</span>
+      <span class="contact-item"><i class="ti ti-brand-linkedin"></i> isabelle-meunier-04660b37</span>
+    </div>
+  </div>
+  <div class="avatar">IM</div>
+</div>
+
+<div class="stats">
+  <div class="stat-card"><div class="stat-n">15+</div><div class="stat-l">Years in financial services</div></div>
+  <div class="stat-card"><div class="stat-n">20</div><div class="stat-l">Countries covered</div></div>
+  <div class="stat-card"><div class="stat-n">1,000+</div><div class="stat-l">People led or trained</div></div>
+  <div class="stat-card"><div class="stat-n">3</div><div class="stat-l">Companies founded</div></div>
+</div>
+
+<div class="section-label">Experience</div>
+
+<div class="exp-card">
+  <div class="job-top"><span class="job-title">Head of transformation &nbsp;·&nbsp; Associate Partner</span><span class="date-badge">2024 – present</span></div>
+  <div class="job-co"><span class="co-badge co-tw">Teamwill</span><span class="co-badge co-exco">ExCo</span></div>
+  <ul class="points">
+    <li>Built the <b>2030 strategic roadmap</b> and full transformation plan (investment, KPIs, governance)</li>
+    <li>Orchestrated <b>20 AI initiatives</b> across 1,000+ employees — culture rollout, upskilling, and a <b>100% AI-native platform</b> for banks & captive finance companies</li>
+  </ul>
+  <div class="tags-row"><span class="tag">AI strategy</span><span class="tag">Transformation</span><span class="tag">Fintech</span></div>
+</div>
+
+<div class="exp-card">
+  <div class="job-top"><span class="job-title">Head of marketing & CSR</span><span class="date-badge">2022 – 2024</span></div>
+  <div class="job-co"><span class="co-badge co-tw">Teamwill</span><span class="co-badge co-exco">ExCo</span></div>
+  <ul class="points">
+    <li>Led a <b>team of 6</b> — contributed to <b>doubling revenue and headcount</b> in under two years</li>
+    <li>Built demand generation engine for banking and financial services sectors</li>
+  </ul>
+  <div class="tags-row"><span class="tag">Growth</span><span class="tag">B2B SaaS</span><span class="tag">Team leadership</span></div>
+</div>
+
+<div class="exp-card venture">
+  <div class="job-top"><span class="job-title">Founder & CEO — Hobbys</span><span class="date-badge">2020 – 2024</span></div>
+  <div class="job-co"><span class="co-badge co-venture">Entrepreneurial venture</span><span class="award"><i class="ti ti-trophy" style="font-size:11px"></i> IMT Starter award</span></div>
+  <ul class="points">
+    <li>Certified education business from scratch — digital LMS, 30 trainers, <b>300+ learners/year</b>, City of Paris partnership</li>
+  </ul>
+  <div class="tags-row"><span class="tag">Qualiopi</span><span class="tag">EdTech</span><span class="tag">Team building</span></div>
+</div>
+
+<div class="exp-card consultant">
+  <div class="job-top"><span class="job-title">Strategy consultant</span><span class="date-badge">2019 – 2020</span></div>
+  <div class="job-co"><span class="co-badge co-cons">SideCare (ex-Hoggo)</span></div>
+  <ul class="points">
+    <li>Advised leadership during acceleration phase — <b>€2M raised, €10M round</b> in preparation</li>
+    <li>Hands-on across strategy, recruitment, operations and partnerships</li>
+  </ul>
+  <div class="tags-row"><span class="tag">Strategy</span><span class="tag">Fundraising</span><span class="tag">Ops</span></div>
+</div>
+
+<div class="exp-card venture">
+  <div class="job-top"><span class="job-title">Co-founder — Each One</span><span class="date-badge">2017 – 2019</span></div>
+  <div class="job-co"><span class="co-badge co-venture">Entrepreneurial venture</span><span class="award"><i class="ti ti-cash" style="font-size:11px"></i> €8.6M raised (total)</span></div>
+  <ul class="points">
+    <li>Inclusion & recruitment platform — <b>3,000+ people placed in employment</b> globally &nbsp;<a href="https://www.eachone.co" target="_blank"><i class="ti ti-external-link" style="font-size:11px"></i> eachone.co</a></li>
+  </ul>
+  <div class="tags-row"><span class="tag">Social impact</span><span class="tag">HR tech</span><span class="tag">Inclusion</span></div>
+</div>
+
+<div class="exp-card bnp">
+  <div class="job-top"><span class="job-title">Head of retail finance partnerships & innovation</span><span class="date-badge">2016 – 2019</span></div>
+  <div class="job-co"><span class="co-badge co-bnp">BNP Paribas Personal Finance</span></div>
+  <ul class="points">
+    <li>Managed a <b>team of 10</b> — end-to-end deployment of consumer finance JVs with major retailers across multiple countries</li>
+    <li>Full ownership: product design, <b>risk & compliance frameworks</b>, legal structuring, IT integration</li>
+    <li>Integrated <b>open banking, scoring models and fraud detection</b> into credit origination journeys</li>
+  </ul>
+  <div class="tags-row"><span class="tag">JV setup</span><span class="tag">Credit risk</span><span class="tag">BNPL</span><span class="tag">Open banking</span><span class="tag">Multi-country</span></div>
+</div>
+
+<div class="exp-card bnp">
+  <div class="job-top"><span class="job-title">Consumer finance value proposition & innovation</span><span class="date-badge">2013 – 2016</span></div>
+  <div class="job-co"><span class="co-badge co-bnp">BNP Paribas Personal Finance</span></div>
+  <ul class="points">
+    <li>Pioneered the <b>launch of BNPL for e-commerce</b> — product, business model, go-to-market</li>
+    <li>Led IT evolution to improve <b>credit origination journeys</b> across FMCG, telco and retail</li>
+  </ul>
+  <div class="tags-row"><span class="tag">BNPL</span><span class="tag">Product launch</span><span class="tag">Credit origination</span></div>
+</div>
+
+<div class="exp-card bnp">
+  <div class="job-top"><span class="job-title">Sales operations manager — automotive finance</span><span class="date-badge">2010 – 2013</span></div>
+  <div class="job-co"><span class="co-badge co-bnp">BNP Paribas Personal Finance</span></div>
+  <ul class="points">
+    <li>Distribution strategy across <b>20 countries</b> — dealerships, retail branches, insurers, captives</li>
+    <li>Training programmes for <b>1,000+ field sales reps</b> and retail branch introducer model</li>
+  </ul>
+  <div class="tags-row"><span class="tag">Distribution</span><span class="tag">20 countries</span><span class="tag">Sales ops</span></div>
+</div>
+
+<div class="exp-card venture">
+  <div class="job-top"><span class="job-title">Treasurer — Hacktiv</span><span class="date-badge">2015 – 2016</span></div>
+  <div class="job-co"><span class="co-badge co-venture">Entrepreneurial venture</span><span class="award"><i class="ti ti-trophy" style="font-size:11px"></i> La France s'engage</span></div>
+  <ul class="points">
+    <li>Geolocated citizen engagement platform connecting local projects with nearby citizens &nbsp;<a href="https://hacktiv.org" target="_blank"><i class="ti ti-external-link" style="font-size:11px"></i> hacktiv.org</a></li>
+  </ul>
+  <div class="tags-row"><span class="tag">Civic tech</span><span class="tag">Social impact</span></div>
+</div>
+
+<div class="exp-card bnp">
+  <div class="job-top"><span class="job-title">Business analyst — mortgage lending</span><span class="date-badge">2009 – 2010</span></div>
+  <div class="job-co"><span class="co-badge co-bnp">BNP Paribas Personal Finance</span></div>
+  <ul class="points">
+    <li>Generational credit risk analysis on the <b>mortgage loan portfolio</b> — underwriting policy recommendations to risk committees</li>
+    <li><b>Mortgage PNL reporting</b>, portfolio quality indicators, collections process improvement</li>
+  </ul>
+  <div class="tags-row"><span class="tag">Mortgage risk</span><span class="tag">Underwriting</span><span class="tag">Portfolio analytics</span><span class="tag">Collections</span></div>
+</div>
+
+<div class="section-label">Education, skills & languages</div>
+<div class="bottom-grid">
+  <div class="bottom-card">
+    <div class="bottom-title">Diplomas & certifications</div>
+    <div class="edu-item"><b>Master in Finance</b>European Business School Oestrich-Winkel</div>
+    <div class="edu-item"><b>Master in international strategic management</b>Université Paris I Panthéon-Sorbonne</div>
+    <div class="edu-item"><b>Professional coach — RNCP</b>École de Coaching de Paris</div>
+    <div class="edu-item"><b>AI: Business Strategies & Applications</b>UC Berkeley</div>
+  </div>
+  <div class="bottom-card">
+    <div class="bottom-title">Skills</div>
+    <div class="skill-tags">
+      <span class="skill-tag">Mortgage lending</span>
+      <span class="skill-tag">Credit origination</span>
+      <span class="skill-tag">Portfolio analytics</span>
+      <span class="skill-tag">Team building</span>
+      <span class="skill-tag">P&L ownership</span>
+      <span class="skill-tag">Regulatory engagement</span>
+      <span class="skill-tag">HTML / CSS</span>
+      <span class="skill-tag">Vibe coding</span>
+    </div>
+  </div>
+  <div class="bottom-card">
+    <div class="bottom-title">Languages</div>
+    <div class="lang-row"><b>French</b> — Native</div>
+    <div class="lang-row"><b>English</b> — Fluent</div>
+  </div>
+</div>
+
+<button class="print-btn" onclick="window.print()"><i class="ti ti-printer"></i> &nbsp;Imprimer / Enregistrer en PDF</button>
+
+</div>
+</body>
+</html>
